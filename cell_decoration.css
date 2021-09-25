@@ -1,0 +1,456 @@
+/* The object of this page is to hold the decorations for the cells based on their orientation */
+
+.start
+{
+	background-color: black;
+	border: 2px solid black;
+}
+.end
+{
+	background-color: black;
+	border: 2px solid black;
+}
+/* corners */
+
+.up
+{
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+.down
+{
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+
+}
+.right
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.left
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+
+/* corners */
+
+.left_up
+{
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.left_down
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.right_up
+{
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.right_down
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.up_left
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.up_right
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.down_left
+{
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.down_right
+{
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+
+/* breakpoints */
+
+.left-left-left      /* absurd */
+{
+	;                /* 1 */
+}
+.left-left-right     /* absurd */
+{
+	;                /* 2 */
+}
+.left-left-up        /* 3 */
+{
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid black;
+	border-right: 2px solid transparent;
+	border-left: 2px solid transparent;
+}
+.left-left-down      /* 4 */
+{
+	border-top: 2px solid black;
+	border-bottom: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-left: 2px solid transparent;
+}
+
+.left-right-left     /* absurd */
+{
+	;                /* 5 */
+}
+.left-right-right    /* absurd */
+{
+	;                /* 6 */
+}
+.left-right-up       /* absurd */
+{
+	;                /* 7 */
+}
+.left-right-down     /* absurd */
+{
+	;                /* 8 */
+}
+
+.left-up-left        /* 9 */
+{
+	border-bottom: 2px solid black;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.left-up-right       /* absurd */
+{
+	;                /* 10 */
+}
+.left-up-up          /* absurd */
+{
+	;                /* 11 */
+}
+.left-up-down        /* 12 */
+{
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+
+.left-down-left      /* 13 */
+{
+	border-top: 2px solid black;
+	border-right: transparent;
+	border-left: 2px solid transparent;
+	border- bottom: 2px solid transparent;
+}
+.left-down-right     /* absurd */
+{
+	;                /* 14 */
+}
+.left-down-up        /* 15 */
+{
+	border-right: 2px solid transparent;
+	border-left: 2px solid black;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+.left-down-down      /* absurd */
+{
+	;                /* 16 */
+}
+
+
+.right-left-left     /* absurd */
+{
+	;                /* 17 */
+}
+.right-left-right    /* absurd */
+{
+	;                /* 18 */
+}
+.right-left-up       /* absurd */
+{
+	;                /* 19 */
+}
+.right-left-down     /* absurd */
+{
+	;                /* 20 */
+}
+
+.right-right-left    /* absurd */
+{
+	;                /* 21 */
+}
+.right-right-right   /* absurd */
+{
+	;                /* 22 */
+}
+.right-right-up      /* 23 */
+{
+	border-bottom: 2px solid black;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.right-right-down    /* 24 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+
+.right-up-left       /* absurd */
+{
+	;                /* 25 */
+}
+.right-up-right      /* 26 */
+{
+	border-bottom: 2px solid black;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.right-up-up         /* absurd */
+{
+	;                /* 27 */
+}
+.right-up-down       /* 28 */
+{
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+
+.right-down-left     /* 29 */
+{
+	border-top: 2px solid transparent;
+	border-right: black;
+	border-left: 2px solid transparent;
+	border- bottom: 2px solid transparent;
+}
+.right-down-right    /* 30 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.right-down-up       /* 31 */
+{
+	border-right: 2px solid black;
+	border-left: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+.right-down-down    /* absurd */
+{
+	;               /* 32 */
+}
+
+
+.up-left-left       /* absurd */
+{
+	;               /* 33 */
+}
+.up-left-right      /* 34 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.up-left-up        /* 35 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.up-left-down      /* absurd */
+{
+	;              /* 36 */
+}
+
+.up-right-left     /* 37 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid black;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.up-right-right   /* absurd */
+{
+	;             /* 38 */
+}
+.up-right-up      /* 39 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.up-right-down   /* absurd */
+{
+	;            /* 40 */
+}
+
+.up-up-left      /* absurd */
+{
+	;            /* 41 */
+}
+.up-up-right     /* 42 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.up-up-up        /* absurd */
+{
+	;            /* 43 */
+}
+.up-up-down      /* absurd */
+{
+	;            /* 44 */
+}
+
+.up-down-left    /* absurd */
+{
+	;            /* 45 */
+}
+.up-down-right   /* absurd */
+{
+	;            /* 46 */
+}
+.up-down-up      /* absurd */
+{
+	;            /* 47 */
+}
+.up-down-down    /* absurd */
+{
+	;            /* 48 */
+}
+
+
+
+
+
+
+
+.down-left-left       /* absurd */
+{
+	;               /* 49 */
+}
+.down-left-right      /* 50 */
+{
+	border-bottom: 2px solid black;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.down-left-up        /* absurd */
+{
+	;                /* 51 */
+}
+.down-left-down      /* 52 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+
+.down-right-left     /* 53 */
+{
+	border-bottom: 2px solid black;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+.down-right-right   /* absurd */
+{
+	;             /* 54 */
+}
+.down-right-up      /* absurd */
+{
+	;               /* 55 */
+}
+.down-right-down   /* absurd */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+
+.down-up-left      /* absurd */
+{
+	;            /* 57 */
+}
+.down-up-right     /* absurd */
+{
+	;              /* 58 */
+}
+.down-up-up        /* absurd */
+{
+	;            /* 59 */
+}
+.down-up-down      /* absurd */
+{
+	;            /* 60 */
+}
+
+.down-down-left    /* 61 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid transparent;
+	border-right: 2px solid black;
+}
+.down-down-right   /* 62 */
+{
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-left: 2px solid black;
+	border-right: 2px solid transparent;
+}
+.down-down-up      /* absurd */
+{
+	;            /* 63 */
+}
+.down-down-down    /* absurd */
+{
+	;            /* 64 */
+}

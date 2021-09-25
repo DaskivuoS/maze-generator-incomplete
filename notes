@@ -1,0 +1,441 @@
+The depiction for the directions using the arrows are:
+
+&larr;   means    left
+&rarr;   means    right
+&uarr;   means    up
+&darr;   means    down
+
+// repository
+
+// function final_display
+
+function final_display()
+{
+	console.clear();
+
+	// the objective is to make the final display with all edges
+	var display = "<table id='maze'>";
+	for(var i=0;i<y_resolution;i++)
+	{
+		display = display+"<tr>";
+		for(var j=0;j<x_resolution;j++)
+		{
+			// first we check if it is the starting cell or not
+			if(starting_point[0] == i && starting_point[1] == j)
+			{
+				display = display+"<td class='start'></td>";
+				continue;
+			}
+			// now we check if it is the ending cell or not
+			if(ending_point[0] == i && ending_point[1] == j)
+			{
+				display = display+"<td class='end'></td>";
+				continue;
+			}
+
+			// first we judge the decoration to demarkate direction of flow
+			// the borders locate the edges
+			//here we display the maze in final form
+
+			var current_cell = [i,j];
+			var current_cell_value = values[i][j];
+			console.log("We are determining the orientation of "+current_cell);
+			console.log("With a value of "+current_cell_value);
+
+			// the straight lines
+			if(values[i][j] == "up")
+			{
+				display = display+"<td class='up'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "down")
+			{
+				display = display+"<td class='down'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "right")
+			{
+				display = display+"<td class='right'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "left")
+			{
+				display = display+"<td class='left'>"+base[i][j]+"</td>";
+			}
+
+			// the corners
+			if(values[i][j] == "up-right")
+			{
+				display = display+"<td class='up_right'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "up-left")
+			{
+				display = display+"<td class='up_left'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "down-right")
+			{
+				display = display+"<td class='down_right'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "down-left")
+			{
+				display = display+"<td class='down_left'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "right-up")
+			{
+				display = display+"<td class='right_up'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "right-down")
+			{
+				display = display+"<td class='right_down'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "left-up")
+			{
+				display = display+"<td class='left_up'>"+base[i][j]+"</td>";
+			}
+			if(values[i][j] == "left-down")
+			{
+				display = display+"<td class='left_down'>"+base[i][j]+"</td>";
+			}
+
+			// the breakpoints
+			if(values[i][j] == "left-left-left")         // 1
+			{
+				display = display+"<td class='left-left-left'></td>";
+			}
+			if(values[i][j] == "left-left-right")        // 2
+			{
+				display = display+"<td class='left-left-right'></td>";
+			}
+			if(values[i][j] == "left-left-up")           // 3
+			{
+				display = display+"<td class='left-left-up'></td>";
+			}
+			if(values[i][j] == "left-left-down")         // 4
+			{
+				display = display+"<td class='left-left-down'></td>";
+			}
+
+			if(values[i][j] == "left-right-left")        // 5
+			{
+				display = display+"<td class='left-right-left'></td>";
+			}
+			if(values[i][j] == "left-right-right")       // 6
+			{
+				display = display+"<td class='left-right-right'></td>";
+			}
+			if(values[i][j] == "left-right-up")          // 7
+			{
+				display = display+"<td class='left-right-up'></td>";
+			}
+			if(values[i][j] == "left-right-down")        // 8
+			{
+				display = display+"<td class='left-right-down'></td>";
+			}
+
+			if(values[i][j] == "left-up-left")           // 9
+			{
+				display = display+"<td class='left-up-left'></td>";
+			}
+			if(values[i][j] == "left-up-right")          // 10
+			{
+				display = display+"<td class='left-up-right'></td>";
+			}
+			if(values[i][j] == "left-up-up")             // 11
+			{
+				display = display+"<td class='left-up-up'></td>";
+			}
+			if(values[i][j] == "left-up-down")           // 12
+			{
+				display = display+"<td class='left-up-down'></td>";
+			}
+
+			if(values[i][j] == "left-down-left")         // 13
+			{
+				display = display+"<td class='left-down-left'></td>";
+			}
+			if(values[i][j] == "left-down-right")        // 14
+			{
+				display = display+"<td class='left-down-right'></td>";
+			}
+			if(values[i][j] == "left-down-up")           // 15
+			{
+				display = display+"<td class='left-down-up'></td>";
+			}
+			if(values[i][j] == "left-down-down")         // 16
+			{
+				display = display+"<td class='left-down-down'></td>";
+			}
+
+
+			if(values[i][j] == "right-left-left")         // 17
+			{
+				display = display+"<td class='right-left-left'></td>";
+			}
+			if(values[i][j] == "right-left-right")        // 18
+			{
+				display = display+"<td class='right-left-right'></td>";
+			}
+			if(values[i][j] == "right-left-up")           // 19
+			{
+				display = display+"<td class='right-left-up'></td>";
+			}
+			if(values[i][j] == "right-left-down")         // 20
+			{
+				display = display+"<td class='right-left-down'></td>";
+			}
+
+			if(values[i][j] == "right-right-left")        // 21
+			{
+				display = display+"<td class='right-right-left'></td>";
+			}
+			if(values[i][j] == "right-right-right")       // 22
+			{
+				display = display+"<td class='right-right-right'></td>";
+			}
+			if(values[i][j] == "right-right-up")          // 23
+			{
+				display = display+"<td class='right-right-up'></td>";
+			}
+			if(values[i][j] == "right-right-down")        // 24
+			{
+				display = display+"<td class='right-right-down'></td>";
+			}
+
+			if(values[i][j] == "right-up-left")           // 25
+			{
+				display = display+"<td class='right-up-left'></td>";
+			}
+			if(values[i][j] == "right-up-right")          // 26
+			{
+				display = display+"<td class='right-up-right'></td>";
+			}
+			if(values[i][j] == "right-up-up")             // 27
+			{
+				display = display+"<td class='right-up-up'></td>";
+			}
+			if(values[i][j] == "right-up-down")           // 28
+			{
+				display = display+"<td class='right-up-down'></td>";
+			}
+
+			if(values[i][j] == "right-down-left")         // 29
+			{
+				display = display+"<td class='right-down-left'></td>";
+			}
+			if(values[i][j] == "right-down-right")        // 30
+			{
+				display = display+"<td class='right-down-right'></td>";
+			}
+			if(values[i][j] == "right-down-up")           // 31
+			{
+				display = display+"<td class='right-down-up'></td>";
+			}
+			if(values[i][j] == "right-down-down")         // 32
+			{
+				display = display+"<td class='right-down-down'></td>";
+			}
+
+
+			if(values[i][j] == "up-left-left")         // 33
+			{
+				display = display+"<td class='up-left-left'></td>";
+			}
+			if(values[i][j] == "up-left-right")        // 34
+			{
+				display = display+"<td class='up-left-right'></td>";
+			}
+			if(values[i][j] == "up-left-up")           // 35
+			{
+				display = display+"<td class='up-left-up'></td>";
+			}
+			if(values[i][j] == "up-left-down")         // 36
+			{
+				display = display+"<td class='up-left-down'></td>";
+			}
+
+			if(values[i][j] == "up-right-left")        // 37
+			{
+				display = display+"<td class='up-right-left'></td>";
+			}
+			if(values[i][j] == "up-right-right")       // 38
+			{
+				display = display+"<td class='up-right-right'></td>";
+			}
+			if(values[i][j] == "up-right-up")          // 39
+			{
+				display = display+"<td class='up-right-up'></td>";
+			}
+			if(values[i][j] == "up-right-down")        // 40
+			{
+				display = display+"<td class='up-right-down'></td>";
+			}
+
+			if(values[i][j] == "up-up-left")           // 41
+			{
+				display = display+"<td class='up-up-left'></td>";
+			}
+			if(values[i][j] == "up-up-right")          // 42
+			{
+				display = display+"<td class='up-up-right'></td>";
+			}
+			if(values[i][j] == "up-up-up")             // 43
+			{
+				display = display+"<td class='up-up-up'></td>";
+			}
+			if(values[i][j] == "up-up-down")           // 44
+			{
+				display = display+"<td class='up-up-down'></td>";
+			}
+
+			if(values[i][j] == "up-down-left")         // 45
+			{
+				display = display+"<td class='up-down-left'></td>";
+			}
+			if(values[i][j] == "up-down-right")        // 46
+			{
+				display = display+"<td class='up-down-right'></td>";
+			}
+			if(values[i][j] == "up-down-up")           // 47
+			{
+				display = display+"<td class='up-down-up'></td>";
+			}
+			if(values[i][j] == "up-down-down")         // 48
+			{
+				display = display+"<td class='up-down-down'></td>";
+			}
+
+
+
+
+			if(values[i][j] == "down-left-left")         // 49
+			{
+				display = display+"<td class='down-left-left'></td>";
+			}
+			if(values[i][j] == "down-left-right")        // 50
+			{
+				display = display+"<td class='down-left-right'></td>";
+			}
+			if(values[i][j] == "down-left-up")           // 51
+			{
+				display = display+"<td class='down-left-up'></td>";
+			}
+			if(values[i][j] == "down-left-down")         // 52
+			{
+				display = display+"<td class='down-left-down'></td>";
+			}
+
+			if(values[i][j] == "down-right-left")        // 53
+			{
+				display = display+"<td class='left-right-left'></td>";
+			}
+			if(values[i][j] == "down-right-right")       // 54
+			{
+				display = display+"<td class='down-right-right'></td>";
+			}
+			if(values[i][j] == "down-right-up")          // 55
+			{
+				display = display+"<td class='down-right-up'></td>";
+			}
+			if(values[i][j] == "down-right-down")        // 56
+			{
+				display = display+"<td class='down-right-down'></td>";
+			}
+
+			if(values[i][j] == "down-up-left")           // 57
+			{
+				display = display+"<td class='down-up-left'></td>";
+			}
+			if(values[i][j] == "down-up-right")          // 58
+			{
+				display = display+"<td class='down-up-right'></td>";
+			}
+			if(values[i][j] == "down-up-up")             // 59
+			{
+				display = display+"<td class='down-up-up'></td>";
+			}
+			if(values[i][j] == "down-up-down")           // 60
+			{
+				display = display+"<td class='down-up-down'></td>";
+			}
+
+			if(values[i][j] == "down-down-left")         // 61
+			{
+				display = display+"<td class='down-down-left'></td>";
+			}
+			if(values[i][j] == "down-down-right")        // 62
+			{
+				display = display+"<td class='down-down-right'></td>";
+			}
+			if(values[i][j] == "down-down-up")           // 63
+			{
+				display = display+"<td class='down-down-up'></td>";
+			}
+			if(values[i][j] == "down-down-down")         // 64
+			{
+				display = display+"<td class='down-down-down'></td>";
+			}
+		}
+		display = display+"</tr>";
+	}
+	display = display+"</table>";
+	document.getElementById("display").innerHTML = display;
+}
+
+// function solve values
+
+function solve_values()
+{
+	// first we initialize the array with generic entry
+	for(var i=0;i<y_resolution;i++)
+	{
+		values[i] = new Array();
+		for(var j=0;j<x_resolution;j++)
+		{
+			values[i][j] = "o";
+		}
+	}
+
+	// now we go on to actually deciphering the values
+	// primarily we just identify straight lines and corners
+	for(var i=0;i<(taken_index-1);i++)
+	{
+		var next_cell = taken_cells[i+1];
+		var current_cell = taken_cells[i];
+		var value_next_cell = symbol_to_direction(base[next_cell[0]][next_cell[1]]);
+		var value_current_cell = symbol_to_direction(base[current_cell[0]][current_cell[1]]);
+		console.log("The next cell is "+next_cell+" with a value of "+value_next_cell);
+		console.log("The current cell is "+current_cell+" with a value of "+value_current_cell);
+
+		// we must not bother the breakpoints with the following generalisation
+		var breakpoint = false;
+		for(var j=0;j<breakpoints_index;j++)
+		{
+			if(breakpoints[j] == current_cell)
+			{
+				breakpoint = true;
+			}
+		}
+
+		// there might be breakpoints in which case adjacent cells wont come up as next and current
+		// so we need to check for adjacent cells
+
+		if(Math.abs(current_cell[0]-next_cell[0]) == 1 || Math.abs(current_cell[1]-next_cell[1]) == 1)
+		{
+			// we do not bother if it is a breakpoint
+			if(breakpoint == true)
+			{
+				continue;
+			}
+			
+			console.log("Adjacent cells !");
+			// now we go on to update the value for the cell
+			if(value_next_cell != value_current_cell)
+			{
+				// we got a corner !
+				values[current_cell[0]][current_cell[1]] = value_current_cell+"-"+value_next_cell;
+			}
+			else
+			{
+				// we got a straight path
+				values[current_cell[0]][current_cell[1]] = value_current_cell;
+			}
+		}
+	}
+}
